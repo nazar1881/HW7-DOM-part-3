@@ -2,13 +2,18 @@ let input = document.getElementById('inp');
 let btn = document.getElementById('btn');
 let ul = document.getElementById('ul');
 
+
+function createElement(elem) {
+    return document.createElement(elem);
+}
+
 btn.addEventListener('click', function(){
-    let li = document.createElement('li');
-    let delBtn = document.createElement('button');
-    delBtn.classList.add('remove-btn')
     if (!input.value){
         alert('Error, please enter your task.')
     }else {
+        let li = createElement('li');
+        let delBtn = createElement('button');
+        delBtn.classList.add('remove-todo')
         ul.appendChild(li);
         li.innerText = input.value;
         li.append(delBtn);
